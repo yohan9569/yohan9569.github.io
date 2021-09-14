@@ -128,6 +128,9 @@ author:
     - label: "LinkedIn"
       icon: "/assets/images/linkedin.png"
       url: "https://www.linkedin.com/in/yohan-park-b9b7041ab/"
+    - label: "LinkedIn"
+      icon: "https://github.com/yohan9569/yohan9569.github.io/assets/images/linkedin.png"
+      url: "https://www.linkedin.com/in/yohan-park-b9b7041ab/"
 
 # Site Footer
 footer:
