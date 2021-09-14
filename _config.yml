@@ -126,12 +126,6 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - label: "LinkedIn"
-      icon: "/assets/images/linkedin.png"
-      url: "https://www.linkedin.com/in/yohan-park-b9b7041ab/"
-    - label: "LinkedIn"
-      icon: "https://github.com/yohan9569/yohan9569.github.io/assets/images/linkedin.png"
-      url: "https://www.linkedin.com/in/yohan-park-b9b7041ab/"
-    - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/yohan-park-b9b7041ab/"
 
@@ -157,7 +151,7 @@ footer:
       icon: "fab fa-fw fa-instagram"
       # url:
     - label: "LinkedIn"
-      icon: "/assets/images/linkedin.png"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/yohan-park-b9b7041ab/"
 
 
