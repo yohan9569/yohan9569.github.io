@@ -126,7 +126,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - label: "LinkedIn"
-      icon: "/assets/images/linkedin.png"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/yohan-park-b9b7041ab/"
 
 # Site Footer
