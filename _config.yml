@@ -126,7 +126,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - label: "LinkedIn"
-      icon: "/assets/images/linkedin.jpg"
+      icon: "/assets/images/linkedin.png"
       url: "https://www.linkedin.com/in/yohan-park-b9b7041ab/"
 
 # Site Footer
@@ -140,7 +140,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/yohan9569"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -150,6 +150,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
+    - label: "LinkedIn"
+      icon: "/assets/images/linkedin.png"
+      url: "https://www.linkedin.com/in/yohan-park-b9b7041ab/"
 
 
 # Reading Files
