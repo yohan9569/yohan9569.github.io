@@ -109,7 +109,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "yohan9569@gmail.com"
+      # url: "yohan9569@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -126,7 +126,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
+      icon: "https://github.com/yohan9569/yohan9569.github.io/assets/images/linkedin.png"
       url: "https://www.linkedin.com/in/yohan-park-b9b7041ab/"
 
 # Site Footer
