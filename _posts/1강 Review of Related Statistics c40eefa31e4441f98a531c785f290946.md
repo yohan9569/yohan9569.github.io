@@ -1,0 +1,132 @@
+# 1강 Review of Related Statistics
+
+복습: 처음
+작성일시: 2021년 8월 23일 오전 11:17
+최종 편집일시: 2021년 8월 24일 오후 4:34
+
+Key Word: 
+
+# 강의 소개
+
+- 시계열 강의는 통계를 기본으로 하고, 시계열 데이터의 여러가지 기본 모형을 배우는
+- 주가분석, 연도별 온도의 흐름을 분석하기 위해
+- 통계와 회귀분석을 더해서 시계열
+- 교안
+
+    [http://www.kocw.net/home/cview.do?cid=d4e25cf0521ac386](http://www.kocw.net/home/cview.do?cid=d4e25cf0521ac386)
+
+- PDF
+
+    [http://www.ru.ac.bd/stat/wp-content/uploads/sites/25/2019/03/504_06_Cryer_Time-Series-Analysis_-With-Applications-in-R-Springer-2010.pdf](http://www.ru.ac.bd/stat/wp-content/uploads/sites/25/2019/03/504_06_Cryer_Time-Series-Analysis_-With-Applications-in-R-Springer-2010.pdf)
+
+- Github
+
+    [https://github.com/nickpoison/tsa4](https://github.com/nickpoison/tsa4)
+
+## 개요
+
+- 시계열 분석의 기본 분석 방법을 소개
+- univatate(시계열이 하나인)의 ARMA/ARIMA 모형, (G)ARCH 모형, 예측, 모델 선택
+- state-space 모델: 정규화되지 않은 시계열 시그널
+- multivariate 시계열 모형, 비모수 방법, 주파수 도메인 분석 등의 방법
+
+## 교재
+
+- Time Series Analysis and its Application with R examples
+    - R 실습 위주 교재
+    - [https://www.stat.pitt.edu/stoffer/tsa4/](https://www.stat.pitt.edu/stoffer/tsa4/)
+- Introduction to Time Series and Forecasting
+    - 이론 위주 교재
+    - [https://www.academia.edu/42933730/Introduction_to_Time_Series_and_Forecasting_Third_Edition](https://www.academia.edu/42933730/Introduction_to_Time_Series_and_Forecasting_Third_Edition)
+
+# 기초 통계
+
+## X1, X2, ... , Xn
+
+- 이렇게 시계열의 데이터들이 주어지는 겁니다. 이걸 가지고 분석을 하는 겁니다.
+- 각각이 Random variable의 realization 입니다. 각 순간마다 있는 겁니다.
+
+### CDF
+
+- P(X≤x) = Fx(x)
+- P(X≤x, Y≤y) = Fxy(x,y)  단지 두 개.
+- 여러 변수를 알려고 하는 것.
+- CDF를 알면, random variable의 complete 한 description을 다 아는 것
+- CDF는 어떤 확률이 어떤 값보다 같거나 작을 확률을 말하는 것
+- CDF 를 미분 하면 pdf가 나온다. 랜덤 변수가 그 변수에 어떤 확률값을 가지는지 확률에 대한 값이 나옵니다.
+- CDF를 알면 random variable의 현상을 확률적으로는 다 안다. 모든 정보를 안다.
+
+## White Noise
+
+- 이 정도면 통계적으로 분석 가능한 noise라고 하자!
+- 세 가지를 만족하면 white noise
+    1. We assume it is uncorrelated: uncorrelated라고 가정.
+        - 서로 다른 두 포지션 간에 선형적인 관계가 평균적으로는 없어야 한다.
+    2. 평균은 0 E[at]=0
+    3. Var[at]=시그마의 제곱. t와 관련이 없다.
+        - 시간 쪽에서 봤을 때는 항상 variability는 동일하고 무작위적인 시그널
+
++ Usually, assume **iid** wn 보통 통계적인 해석을 위해 추가해서 설명.
+
+- identical: 동일한 성질의 화이트 노이즈가 계속된다. 특정 시점에서 노이즈가 세지는 게 아니라 계속 동일
+- independent: t 시점과 s 시점의 관측값 at와 as가 서로 통계적으로 독립. 1번 조건보다 강력한 조건. 독립이면 covariance 가 0. 반대는 모르는 거임.
+- 서로 독립이다 → 선형 관계가 없다. (O)  /  선형 관계가 없다 → 서로 독립이다. (X)
+    - 멘토님: 비선형 상관관계 있어도 correlation 은 낮게 나온다.
+
+        correlation도 선형 관계만을 나타낸다.
+
+        → scatterplot을 그려봐야 한다.
+
++ Usually, we take iid normal gausian white noise
+
+- 이게 꼭 nomal iid 일 필요는 없지만, 통계적인 분석을 위해서
+- 정규분포를 가지는 것으로 가정해서 시작
+
+![Untitled](1%E1%84%80%E1%85%A1%E1%86%BC%20Review%20of%20Related%20Statistics%20c40eefa31e4441f98a531c785f290946/Untitled.png)
+
+- Q. White noise는 왜 나온 거지? 우리가 배우는 시계열과 무슨 관계가 있는 거지?
+    - 많이 쓰인다. 알고 있으면 좋다.
+    - 분산에 대한 것.
+    - "우연에 의한 오차는 늘 있다." 라고 가정하는 것.
+    - 그리고 그것들은 standard-normal 을 따른다고 가정.
+    - 언제든 존재하는 노이즈.
+        - 6 sigma(품질 경영 기법, 경영 쪽에서 유명) → white noise 예.
+
+        ![Untitled](1%E1%84%80%E1%85%A1%E1%86%BC%20Review%20of%20Related%20Statistics%20c40eefa31e4441f98a531c785f290946/Untitled%201.png)
+
+    - 그 분산 범위를 넘어가면 이상치, anomaly detection에도 사용됨.
+
+![Untitled](1%E1%84%80%E1%85%A1%E1%86%BC%20Review%20of%20Related%20Statistics%20c40eefa31e4441f98a531c785f290946/Untitled%202.png)
+
+## Stationary time series
+
+- station 가만히 있는 것
+- stationary 한 time series를 가정해서 분석. 이것이 기본이 돼서 다른 시그널 분석하는데 자료가 된다.
+- Xt is stationary == Xt's joint distribution does not change. distribution = 분포
+- 왜??
+    - 모든 random variable 에 대한 cdf를 아는 것은 사실상 불가능.
+        - 전구와 퓨즈를 각각 알려면 각각 50번씩 실험. 하지만 둘의 관계를 알려면 50x50번 실험 필요. 변수가 하나 더 늘어나면? 또 하나 늘면? 그래프로 표현도 못하고 머리 깨짐.
+    - 최대한 줄여서 우리가 다룰 수 있는 정도를 해보자고 가정한 것.
+    - 아주 단순화시켜서 생각할 수 있다.
+- 그래도 설명이 되는가?
+    - 굉장히 많은 경우에 대해서 충분히 많은 정보를 설명해 냄.
+    - 상황에 맞게 적용할 과제가 있기는 하다.
+
+### Strictly Stationary
+
+- 시점을 h 만큼 옮겨도 기존과 cdf가 같으면, strict 한 stationary signal.
+    - 1과 2의 관계가 2와 3의 관계, 3과 4의 관계와 같다.
+- h는 0보다 큰 정수이기만 하면 됨.
+- 굉장히 강력한 조건.
+
+### Weakly stationary
+
+- 조금 완화한 조건. 일반적으로 stationary는 weakly를 의미.
+    - Xt의 평균이 상수 constant
+    - Cov(Xt, Xs) = Cov(Xt+h, Xs+h)
+- white noise stationary? > yes
+
+### Autocovariance function
+
+- only dependent on h, not dependent on t
+- 감마(h) = Cov(Xt, Xt+h)     # h=lag
