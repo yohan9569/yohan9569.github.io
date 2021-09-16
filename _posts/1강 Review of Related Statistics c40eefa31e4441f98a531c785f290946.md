@@ -1,3 +1,16 @@
+---
+title : "Notion to GitHub Blog"
+category :
+    - Time Series
+tag : 
+    - time series
+    - notion
+author_profile : true
+sidebar_main : true
+use_math : true
+toc : true
+---
+
 # 1강 Review of Related Statistics
 
 복습: 처음
